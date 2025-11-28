@@ -41,6 +41,7 @@ SNAP_INSTALL=(android-studio --classic)
 #-------------- Funciones para instalar dependencias -------------------
 
 function installSnap(){
+    cd
     echo "Instalando Snap"
     git clone https://aur.archlinux.org/snapd.git
     cd snapd
@@ -51,6 +52,7 @@ function installSnap(){
 }
 
 function installParu(){
+    cd
     echo "Instalando Paru"
     sudo pacman -S --needed base-devel # Dependencias de Paru
     git clone https://aur.archlinux.org/paru.git
@@ -61,6 +63,7 @@ function installParu(){
 }
 
 function installFlatpak(){
+    cd
     echo "Instalando Flatpak"
     sudo pacman -S flatpak --noconfirm --needed
 }
@@ -85,6 +88,8 @@ function installWithSnap(){
 
 
 function main(){
+
+    sudo pacman -Syu --noconfirm --needed
 
 # Fase 1 - Instalacion de las dependencias:
 
