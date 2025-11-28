@@ -4,7 +4,7 @@
 PACMAN_INSTALL=(git kitty vlc)
 PARU_INSTALL=(antigravity visual-studio-code-bin)
 FLATPAK_INSTALL=(com.brave.Browser com.discordapp.Discord org.telegram.desktop)
-SNAP_INSTALL=(android-studio)
+SNAP_INSTALL=(android-studio --classic)
 
 
 
@@ -103,6 +103,8 @@ function main(){
 # Fase 3 - Instalacion de la personalizacion:
 
 echo "instalando personalizacion de Kitty"
+
+    cp -r source/config/kitty ~/.config/kitty
 
 
 
